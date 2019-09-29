@@ -24,9 +24,8 @@ before_script:
 
 after_success:
     - cd $TRAVIS_BUILD_DIR
-    - ls -lh out/* # Assuming you have some files in out/ that you would like to upload
-    - wget -c https://github.com/aferrero2707/uploadtool/raw/master/upload_rotate.sh
-    - bash  ./upload_rotate.sh "continuous" out/* >& /dev/null
+    - ls -lh out/*
+    - bash  ./scripts/upload_rotate.sh "continuous" out/* >& /dev/null
 
 branches:
   except:
